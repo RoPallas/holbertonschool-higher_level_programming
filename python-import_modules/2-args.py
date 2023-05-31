@@ -4,7 +4,7 @@ if __name__ == "__main__":
     argv = sys.argv
     len_argv = len(argv)
     if len_argv == 1:
-        print(f"{len_argv - 1} argument.")
+        print(f"{len_argv - 1} arguments.")
     elif len_argv == 2:
         print(f"{len_argv - 1} argument:")
         print(f"1: {argv[1]}")
