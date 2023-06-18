@@ -23,23 +23,9 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Init a Square"""
 
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
-
-    @property
-    def height(self):
-        """Get the height of the rectangle"""
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """Set the height of the rectangle"""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = value
 
     @property
     def width(self):
@@ -54,6 +40,20 @@ class Rectangle:
         elif value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    @property
+    def height(self):
+        """Get the height of the rectangle"""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """Set the height of the rectangle"""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        elif value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
         """Returns the area of the rectangle"""
