@@ -5,6 +5,12 @@ from base import Base
 
 class Rectangle(Base):
     """Class Rectangle
+    Methods:
+        __init__(self, width, height, x=0, y=0, id=None)
+        with(self)
+        height(self)
+        area(self)
+        display(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -73,6 +79,8 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Return the rectangle's area"""
+
         return self.__height * self.__width
 
     def display(self):
