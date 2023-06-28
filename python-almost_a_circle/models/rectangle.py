@@ -94,6 +94,20 @@ class Rectangle(Base):
     def display(self):
         """Print the Rectangle with #"""
 
-        for h in range(self.height):
-            for w in range(self.width):
+        for p_y in range(self.__y):
+            print()
+
+        for h in range(self.__height):
+            for p_x in range(self.__x):
+                print(" ", end="")
+
+            for w in range(self.__width):
                 print("#", end="" if w < (self.__width - 1) else "\n")
+
+    def __str__(self):
+        """Return the rectangle description"""
+
+        name = self.__class__.__name__
+        xy = f"{self.__x}/{self.__y}"
+        wh = f"{self.__width}/{self.__height}"
+        return f"[{name}] ({self.id}) {xy} - {wh}"
