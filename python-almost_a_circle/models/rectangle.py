@@ -80,4 +80,4 @@ class Rectangle(Base):
 
         for h in range(self.height):
             for w in range(self.width):
-                print("#", end="" if j < (self.__width - 1) else "\n")
+                print("#", end="" if w < (self.__width - 1) else "\n")
