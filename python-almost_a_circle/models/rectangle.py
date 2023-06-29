@@ -11,6 +11,14 @@ class Rectangle(Base):
         height(self)
         area(self)
         display(self)
+        __str__(self)
+        update(self, *args, **kargs)
+    Args:
+        __width__
+        __height__
+        __id__
+        __x__
+        __y__
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -111,3 +119,31 @@ class Rectangle(Base):
         xy = f"{self.__x}/{self.__y}"
         wh = f"{self.__width}/{self.__height}"
         return f"[{name}] ({self.id}) {xy} - {wh}"
+
+    def update(self, *args, **kwargs):
+        """Update the Rectangle.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
+
+        if args:
+            arg_names = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                if arg is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    setattr(self, arg_names[i], arg)
+
+        elif kwargs:
+            for k, v in kwargs.items():
+                if k == "id" and v is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    setattr(self, k, v)
