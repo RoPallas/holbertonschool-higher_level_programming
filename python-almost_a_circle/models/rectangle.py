@@ -147,3 +147,14 @@ class Rectangle(Base):
                     self.__init__(self.width, self.height, self.x, self.y)
                 else:
                     setattr(self, k, v)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }

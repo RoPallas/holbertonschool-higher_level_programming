@@ -58,3 +58,13 @@ class Square(Rectangle):
                     self.__init__(self.size, self.x, self.y)
                 else:
                     setattr(self, k, v)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Square"""
+
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
