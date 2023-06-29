@@ -58,3 +58,15 @@ class Base():
             new_obj = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
             new_obj.update(**dictionary)
             return new_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """"""
+
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as jfile:
+                list_dcts = Base.from_json_string(jfile.read())
+                return [cls.create(**dct) for dct in list_dcts]
+        except IOError:
+            return []
