@@ -9,6 +9,10 @@ class Base():
         id
     Method:
         __init__(self, id)
+        to_json_string(list_dictionaries)
+        from_json_string(json_string)
+        create(cls, **dictionary)
+        load_from_file(cls)
     """
 
     __nb_objects = 0
